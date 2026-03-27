@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // 同样的 REPEAT 逻辑
+    
     int REPEAT;
     if (n == 64) REPEAT = 700000000;
     else if (n == 256) REPEAT = 150000000;
