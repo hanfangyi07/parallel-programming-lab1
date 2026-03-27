@@ -26,8 +26,7 @@ int main(int argc, char* argv[]) {
     }
 
    int REPEAT = 1000; // 基础值
-  if (n <=64) REPEAT = 10000;   // 小规模大幅增加
-  else if (n <= 128) REPEAT = 10000;
+  if (n <=128) REPEAT = 10000;   // 小规模大幅增加
    else if (n <= 256) REPEAT = 8000;
    
     else REPEAT = 2000;
@@ -44,10 +43,10 @@ int main(int argc, char* argv[]) {
         x[i] = static_cast<double>(i);
     }
 
-    // 预热（可选）
+    // 预热
     naive(A, x, y, n);
 
-    // 计时部分（如果你还想在控制台看到时间，可以保留）
+    // 计时部分
     LARGE_INTEGER freq, start, end;
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);
