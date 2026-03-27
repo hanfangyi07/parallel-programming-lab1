@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// ---------- 2路链式累加 ----------
+// 2路链式累加
 double optimized_sum_2way(const double* a, int n) {
     double sum1 = 0.0, sum2 = 0.0;
     for (int i = 0; i < n; i += 2) {
@@ -15,7 +15,7 @@ double optimized_sum_2way(const double* a, int n) {
     return sum1 + sum2;
 }
 
-// ---------- 4路链式累加 ----------
+// 4路链式累加
 double optimized_sum_4way(const double* a, int n) {
     double sum1 = 0.0, sum2 = 0.0, sum3 = 0.0, sum4 = 0.0;
     for (int i = 0; i < n; i += 4) {
@@ -27,7 +27,7 @@ double optimized_sum_4way(const double* a, int n) {
     return sum1 + sum2 + sum3 + sum4;
 }
 
-// ---------- 8路链式累加 ----------
+// 8路链式累加 
 double optimized_sum_8way(const double* a, int n) {
     double sum1 = 0.0, sum2 = 0.0, sum3 = 0.0, sum4 = 0.0;
     double sum5 = 0.0, sum6 = 0.0, sum7 = 0.0, sum8 = 0.0;
@@ -45,7 +45,7 @@ double optimized_sum_8way(const double* a, int n) {
 }
 
 int main() {
-    // 测试规模（与之前一致）
+    // 测试规模
     vector<int> sizes = {256, 1024, 4096, 16384, 1048576};
 
     // 路数版本（名称和函数指针）
@@ -66,7 +66,7 @@ int main() {
         double* a = new double[n];
         for (int i = 0; i < n; ++i) a[i] = static_cast<double>(i);
 
-        // 根据规模设定重复次数，使总运行时间约 10~20 ms
+        // 根据规模设定重复次数
         int repeat = 1000;
         if (n <= 256) repeat = 100000;
         else if (n <= 1024) repeat = 20000;
