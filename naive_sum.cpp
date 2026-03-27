@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // 根据 n 动态调整重复次数，使总时间足够长（约 100ms ~ 1000ms）
+    // 根据 n 动态调整重复次数，使总时间足够长
      int REPEAT;
     if (n == 64) REPEAT = 80000000;
     else if (n == 256) REPEAT = 30000000;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
     double total = (double)(end.QuadPart - start.QuadPart) / freq.QuadPart;
     double avg_ms = total / REPEAT * 1000.0;
 
-    // 输出到控制台（可选，脚本会捕获输出）
+   
     cout << fixed << setprecision(6);
     cout << "n=" << n << " naive=" << avg_ms << " ms" << endl;
 
