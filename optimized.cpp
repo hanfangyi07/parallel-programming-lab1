@@ -5,7 +5,7 @@
 using namespace std;
 
 void optimized(const double* A, const double* x, double* y, int n) {
-    // 先清零结果向量
+   
     for (int i = 0; i < n; ++i) {
         y[i] = 0.0;
     }
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     // 预热
     optimized(A, x, y, n);
 
-    // 计时（用于验证，不影响 profiling）
+    // 计时
     LARGE_INTEGER freq, start, end;
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);
